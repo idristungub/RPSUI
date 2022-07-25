@@ -1,2 +1,2 @@
 # RPSUI
-https://idristungub.github.io/RPSUI/
+https://idristungub.github.io/RPSUI/index
