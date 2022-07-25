@@ -1,0 +1,55 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="main.js"></script>
+
+    <style>
+      .options {
+        font-size: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="options">Rock</button>
+    <button class="options">Paper</button>
+    <button class="options">Scissors</button>
+
+    <p id="player-score">0</p>
+    <p id="computer-score">0</p>
+
+    <script>
+      var startBtn = document.querySelectorAll(".options");
+
+      startBtn.forEach((option) => {
+        option.addEventListener("click", function () {
+          // at an  EventListener the code within it is its function
+          const playerSelection = option.textContent;
+
+          const computerSelection = ["Rock", "Paper", "Scissors"];
+
+          const computerPlay = computerSelection[Math.floor(Math.random() * 3)];
+
+          playRound(playerSelection, computerPlay);
+
+          document.querySelector("#player-score").innerHTML = playerScore;
+          document.querySelector("#computer-score").innerHTML = computerScore;
+
+          let score = computerScore + playerScore;
+          if (score >= 5) {
+            if (playerScore > computerScore) {
+              alert(`The player has won with ${playerScore}`);
+            } else if (computerScore > playerScore) {
+              alert(`The computer has won with ${computerScore}`);
+            }
+
+            playerScore = 0;
+            computerScore = 0;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
